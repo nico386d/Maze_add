@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public int transtionSpeed;
-    public float colorTranstionSpeed;
+    public float colourTranstionSpeed;
     public int TargetSlider;
 
 
@@ -27,11 +27,11 @@ public class HealthBar : MonoBehaviour
       slider.value = (Mathf.MoveTowards(slider.value, TargetSlider, transtionSpeed * Time.deltaTime));
         if (TargetSlider >= 91)
         {
-            fill.color = new Color(Mathf.MoveTowards(fill.color.r, 0f, colorTranstionSpeed * Time.deltaTime), Mathf.MoveTowards(fill.color.g, 1f, colorTranstionSpeed * Time.deltaTime), fill.color.b, fill.color.a);
+            fill.color = new Color(Mathf.MoveTowards(fill.color.r, 0f, colourTranstionSpeed * Time.deltaTime), Mathf.MoveTowards(fill.color.g, 1f, colourTranstionSpeed * Time.deltaTime), fill.color.b, fill.color.a);
         }
         if(TargetSlider <= 70 && TargetSlider >= 31)
         {
-            fill.color = new Color(Mathf.MoveTowards(fill.color.r, 1f, colorTranstionSpeed * Time.deltaTime), Mathf.MoveTowards(fill.color.g, 1f, colorTranstionSpeed * Time.deltaTime), fill.color.b, fill.color.a);
+            fill.color = new Color(Mathf.MoveTowards(fill.color.r, 1f, colourTranstionSpeed * Time.deltaTime), Mathf.MoveTowards(fill.color.g, 1f, colourTranstionSpeed * Time.deltaTime), fill.color.b, fill.color.a);
         }
         /* if (TargetSlider <= 90)
          {
@@ -39,7 +39,7 @@ public class HealthBar : MonoBehaviour
          }*/
         if (TargetSlider <= 30)
         {
-            fill.color = new Color(Mathf.MoveTowards(fill.color.r, 1f, colorTranstionSpeed * Time.deltaTime), Mathf.MoveTowards(fill.color.g, 0f, colorTranstionSpeed * Time.deltaTime), fill.color.b, fill.color.a);
+            fill.color = new Color(Mathf.MoveTowards(fill.color.r, 1f, colourTranstionSpeed * Time.deltaTime), Mathf.MoveTowards(fill.color.g, 0f, colourTranstionSpeed * Time.deltaTime), fill.color.b, fill.color.a);
         }
 
         /* if (TargetSlider <= 20)

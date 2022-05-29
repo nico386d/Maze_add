@@ -8,7 +8,7 @@ public class HPScore : MonoBehaviour
     public Text hpscore;
     public static HPScore instance;
     public playerHealth playerHealth;
-    int thehpscore =20;
+    public int thehpscore ;
     // Start is called before the first frame update
 
 
