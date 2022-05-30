@@ -470,6 +470,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1774480188}
+    - target: {fileID: 517559479610687939, guid: ce3e391ec598c7149bd9f3599eb419a0, type: 3}
+      propertyPath: colourTranstionSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 517559479610687948, guid: ce3e391ec598c7149bd9f3599eb419a0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5

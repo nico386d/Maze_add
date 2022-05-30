@@ -14,16 +14,19 @@ public class HPScore : MonoBehaviour
 
     private void Awake()
     {
+        // call methods in other scripts
         instance = this;
 
     }
     void Start()
     {
+        // Set the hp in the begining 
         thehpscore = playerHealth.currentHealth;
         hpscore.text = thehpscore.ToString() + " HP";
     }
     public void Update()
     {
+        // keeps the hp updated
         thehpscore = playerHealth.currentHealth;
         hpscore.text = thehpscore.ToString() + " HP";
     }

@@ -22,10 +22,12 @@ public class HealthBar : MonoBehaviour
     }
     public void Update()
     {
-   
-  
-      slider.value = (Mathf.MoveTowards(slider.value, TargetSlider, transtionSpeed * Time.deltaTime));
-        if (TargetSlider >= 91)
+
+        // makes the healthbar slide towards target slider
+        slider.value = (Mathf.MoveTowards(slider.value, TargetSlider, transtionSpeed * Time.deltaTime));
+
+        // change colour based on TargetSlider value
+        if (TargetSlider >= 71)
         {
             fill.color = new Color(Mathf.MoveTowards(fill.color.r, 0f, colourTranstionSpeed * Time.deltaTime), Mathf.MoveTowards(fill.color.g, 1f, colourTranstionSpeed * Time.deltaTime), fill.color.b, fill.color.a);
         }

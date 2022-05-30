@@ -30,7 +30,7 @@ public class playerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(5);
-         
+            Debug.Log(healthBar.TargetSlider);
         }
        if (currentHealth <= 0)
         {
