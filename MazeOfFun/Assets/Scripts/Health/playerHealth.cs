@@ -25,8 +25,9 @@ public class playerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // update health
+        healthBar.SetHealth(currentHealth);
 
-        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(5);
@@ -37,7 +38,7 @@ public class playerHealth : MonoBehaviour
             MazeInfo.mazeInfo = null;
             SceneManager.LoadScene("Game Over");
         }
-        healthBar.SetHealth(currentHealth);
+        
 
         //makes the max health 100 hp
         if (currentHealth > HealthLimit)
@@ -54,6 +55,13 @@ public class playerHealth : MonoBehaviour
 
       //  healthBar.SetHealth(currentHealth);
     }
+
+     void AddHealth(int heal)
+   {
+       // targetslider dosent go up so the slider in the ui wont move 
+       currentHealth += heal;
+ 
+   }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Wall")
@@ -62,10 +70,10 @@ public class playerHealth : MonoBehaviour
         }
       
          if (collision.gameObject.tag == "Point")
-           {
-                HPScore.instance.AddPoint();
+         {
+                AddHealth(10);
                 Destroy(collision.gameObject);
-           }
+         }
         
     }
 
