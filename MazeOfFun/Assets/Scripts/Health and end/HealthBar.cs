@@ -13,8 +13,13 @@ public class HealthBar : MonoBehaviour
 
     public Slider slider;
     public Image fill;
-    public playerHealth playerHealth;
+   
+    public static HealthBar instance;
 
+    public void Awake()
+    {
+        instance = this;
+    }
 
     public void Start()
     {

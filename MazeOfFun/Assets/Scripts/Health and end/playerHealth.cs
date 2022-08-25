@@ -8,31 +8,39 @@ public class playerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int HealthLimit = 100;
-    public HealthBar healthBar;
-    
+
+
+    public static playerHealth instance;
+
 
     // to do list
     // points give health
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
      
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        HealthBar.instance.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
         // update health
-        healthBar.SetHealth(currentHealth);
+        HealthBar.instance.SetHealth(currentHealth);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+      /*  if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(10);
-            Debug.Log(healthBar.TargetSlider);
-        }
+            Debug.Log(HealthBar.instance.TargetSlider);
+        }*/
+
+        // Death
        if (currentHealth <= 0)
         {
             MazeInfo.mazeInfo = null;
@@ -58,7 +66,7 @@ public class playerHealth : MonoBehaviour
 
      void AddHealth(int heal)
    {
-       // targetslider dosent go up so the slider in the ui wont move 
+       
        currentHealth += heal;
  
    }
